@@ -25,7 +25,11 @@ const styles = theme => ({
 	},
 	selectControl: {
 		margin: theme.spacing.unit
-	}
+	},
+	sliderContainer: {
+		bottom: 0,
+		position: 'absolute',
+	},
 });
 
 class LayoutProperties extends React.Component {
@@ -74,7 +78,7 @@ class LayoutProperties extends React.Component {
 					</FormControl>
 					<FormControl fullWidth className={classes.formControl}>
 						<Typography htmlFor="width">Width</Typography>
-						<Grid container>
+						<Grid container className={classes.sliderContainer}>
 							<Grid item xs={9}>
 								<Slider
 									value={width}
@@ -95,7 +99,7 @@ class LayoutProperties extends React.Component {
 					</FormControl>
 					<FormControl fullWidth className={classes.formControl}>
 						<Typography htmlFor="height">Height</Typography>
-						<Grid container>
+						<Grid container className={classes.sliderContainer}>
 							<Grid item xs={9}>
 								<Slider
 									value={height}
