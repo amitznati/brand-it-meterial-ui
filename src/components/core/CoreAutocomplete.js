@@ -3,55 +3,11 @@
 import React from 'react';
 import classNames from 'classnames';
 import Select from 'react-select';
-import Typography from '@material-ui/core/Typography';
+import {Typography, FormControl, NoSsr, TextField, Paper, Chip, MenuItem} from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-import NoSsr from '@material-ui/core/NoSsr';
-import TextField from '@material-ui/core/TextField';
-import Paper from '@material-ui/core/Paper';
-import Chip from '@material-ui/core/Chip';
-import MenuItem from '@material-ui/core/MenuItem';
 import CancelIcon from '@material-ui/icons/Cancel';
 import { emphasize } from '@material-ui/core/styles/colorManipulator';
 
-const suggestions = [
-	{ label: 'Afghanistan' },
-	{ label: 'Aland Islands' },
-	{ label: 'Albania' },
-	{ label: 'Algeria' },
-	{ label: 'American Samoa' },
-	{ label: 'Andorra' },
-	{ label: 'Angola' },
-	{ label: 'Anguilla' },
-	{ label: 'Antarctica' },
-	{ label: 'Antigua and Barbuda' },
-	{ label: 'Argentina' },
-	{ label: 'Armenia' },
-	{ label: 'Aruba' },
-	{ label: 'Australia' },
-	{ label: 'Austria' },
-	{ label: 'Azerbaijan' },
-	{ label: 'Bahamas' },
-	{ label: 'Bahrain' },
-	{ label: 'Bangladesh' },
-	{ label: 'Barbados' },
-	{ label: 'Belarus' },
-	{ label: 'Belgium' },
-	{ label: 'Belize' },
-	{ label: 'Benin' },
-	{ label: 'Bermuda' },
-	{ label: 'Bhutan' },
-	{ label: 'Bolivia, Plurinational State of' },
-	{ label: 'Bonaire, Sint Eustatius and Saba' },
-	{ label: 'Bosnia and Herzegovina' },
-	{ label: 'Botswana' },
-	{ label: 'Bouvet Island' },
-	{ label: 'Brazil' },
-	{ label: 'British Indian Ocean Territory' },
-	{ label: 'Brunei Darussalam' },
-].map(suggestion => ({
-	value: suggestion.label,
-	label: suggestion.label,
-}));
 
 const styles = theme => ({
 	root: {
@@ -108,6 +64,9 @@ const styles = theme => ({
 				font: 'inherit',
 			},
 		}),
+	},
+	selectControl: {
+		margin: theme.spacing.unit
 	}
 });
 
@@ -224,6 +183,7 @@ class Autocomplete extends React.Component {
 	render() {
 		
 		const {isMulti, classes, theme, single, handleChangeSingle, multi, handleChangeMulti} = this.props;
+		const suggestions = this.props.options;
 		const selectStyles = {
 			input: base => ({
 				...base,
@@ -234,36 +194,38 @@ class Autocomplete extends React.Component {
 			}),
 		};
 		return (
-			<div className={classes.root}>
-				<NoSsr>
-					{!isMulti && <Select
-						classes={classes}
-						styles={selectStyles}
-						options={suggestions}
-						components={components}
-						value={single}
-						onChange={handleChangeSingle}
-						placeholder="Search a country (start with a)"
-					/>}
+			<FormControl fullWidth className={classes.selectControl}>
+				<div className={classes.root}>
+					<NoSsr>
+						{!isMulti && <Select
+							classes={classes}
+							styles={selectStyles}
+							options={suggestions}
+							components={components}
+							value={single}
+							onChange={handleChangeSingle}
+							placeholder="Search a country (start with a)"
+						/>}
 
-					{isMulti && <Select
-						classes={classes}
-						styles={selectStyles}
-						textFieldProps={{
-							label: 'Label',
-							InputLabelProps: {
-								shrink: true,
-							},
-						}}
-						options={suggestions}
-						components={components}
-						value={multi}
-						onChange={handleChangeMulti}
-						placeholder="Select multiple countries"
-						isMulti
-					/>}
-				</NoSsr>
-			</div>
+						{isMulti && <Select
+							classes={classes}
+							styles={selectStyles}
+							textFieldProps={{
+								label: 'Label',
+								InputLabelProps: {
+									shrink: true,
+								},
+							}}
+							options={suggestions}
+							components={components}
+							value={multi}
+							onChange={handleChangeMulti}
+							placeholder="Select multiple countries"
+							isMulti
+						/>}
+					</NoSsr>
+				</div>
+			</FormControl>
 		);
 	}
 	
