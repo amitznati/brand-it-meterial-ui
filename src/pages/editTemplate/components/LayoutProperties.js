@@ -29,6 +29,7 @@ const styles = theme => ({
 	sliderContainer: {
 		bottom: 0,
 		position: 'absolute',
+		paddingRight:  theme.spacing.unit * 2
 	},
 });
 
