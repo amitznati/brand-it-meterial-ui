@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import {Grid, Paper, ExpansionPanel, ExpansionPanelSummary, Typography, ExpansionPanelDetails} from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import withRoot from '../withRoot';
-import LayoutProperties from './editTemplate/components/LayoutProperties';
-import LayoutsList from './editTemplate/components/LayoutsList';
+import withRoot from '../../withRoot';
+import LayoutProperties from './components/LayoutProperties';
+import LayoutsList from './components/LayoutsList';
 
 const styles = theme => ({
 	root: {

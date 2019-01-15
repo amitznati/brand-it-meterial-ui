@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import EditTemplate from './pages/editTemplate';
+import EditTemplate from './pages/editTemplate/editTemplate';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<EditTemplate/>, document.getElementById('root'));
