@@ -8,18 +8,7 @@ import CoreAutocomplete from '../../../components/core/CoreAutocomplete';
 import CoreSlider from '../../../components/core/CoreSlider';
 import CoreSelect from '../../../components/core/CoreSelect';
 import CoreText from '../../../components/core/CoreText';
-
-const styles = theme => ({
-	container: {
-		display: 'flex',
-		flexWrap: 'wrap',
-	},
-	field: {
-		marginLeft: theme.spacing.unit,
-		marginRight: theme.spacing.unit,
-		width: '90%',
-	},
-});
+import styles from '../../../styles/styles';
 
 const suggestions = [
 	{ label: 'Afghanistan' },
@@ -43,7 +32,7 @@ const suggestions = [
 	label: suggestion.label,
 }));
 
-class LayoutProperties extends React.Component {
+class TemplateProperties extends React.Component {
 	
 	state = {
 		name: '',
@@ -105,8 +94,8 @@ class LayoutProperties extends React.Component {
 	}
 }
 
-LayoutProperties.propTypes = {
+TemplateProperties.propTypes = {
 	classes: PropTypes.object.isRequired,
 };
 
-export default withRoot(withStyles(styles)(LayoutProperties));
+export default withRoot(withStyles(styles)(TemplateProperties));

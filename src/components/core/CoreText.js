@@ -2,13 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {TextField, FormControl} from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-
-const styles = theme => ({
-	formControl: {
-		margin: theme.spacing.unit,
-		padding: theme.spacing.unit
-	},
-});
+import styles from './../../styles/styles';
 
 const CoreText = props => {
 	const {classes, value, handleTextChange, label} = props;

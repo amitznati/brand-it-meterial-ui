@@ -3,28 +3,15 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import {Grid, ExpansionPanel, ExpansionPanelSummary, Typography, ExpansionPanelDetails} from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import {ImageLayoutHeader} from './ImageLayout';
 //import LayoutProperties from './LayoutsList/components/LayoutProperties';
-
-const styles = theme => ({
-	root: {
-		width: '100%',
-	},
-	heading: {
-		fontSize: theme.typography.pxToRem(15),
-		flexBasis: '33.33%',
-		flexShrink: 0,
-	},
-	secondaryHeading: {
-		fontSize: theme.typography.pxToRem(15),
-		color: theme.palette.text.secondary,
-	},
-});
+import styles from './../../../styles/styles';
 
 const layouts = [
 	{
 		type: 'image',
 		properties: {
-			src: 'sdffds',
+			src: 'https://material-ui.com/static/images/avatar/1.jpg',
 		}
 	},
 	{
@@ -57,8 +44,7 @@ class LayoutsList extends React.Component {
 		return (
 			<ExpansionPanel key={i} expanded={expanded === i} onChange={this.handleChange(i).bind(this)}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-					<Typography className={classes.heading}>{l.type}</Typography>
-					<Typography className={classes.secondaryHeading}>I am an expansion panel</Typography>
+					<ImageLayoutHeader layout={l} classes={classes} />
 				</ExpansionPanelSummary>
 				<ExpansionPanelDetails >
 					<Typography className={classes.heading}>Layout Properties</Typography>

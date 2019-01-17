@@ -2,16 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Select, Input, FormControl, InputLabel, MenuItem} from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-
-const styles = theme => ({
-	formControl: {
-		margin: theme.spacing.unit,
-		padding: theme.spacing.unit
-	},
-	label: {
-		marginLeft: theme.spacing.unit,
-	}
-});
+import styles from '../../styles/styles';
 
 const CoreSelect = props => {
 	const {classes, value, handleSelectChange, options, label} = props;

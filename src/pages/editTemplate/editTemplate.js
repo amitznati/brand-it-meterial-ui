@@ -4,26 +4,11 @@ import { withStyles } from '@material-ui/core/styles';
 import {Grid, Paper, ExpansionPanel, ExpansionPanelSummary, Typography, ExpansionPanelDetails} from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import withRoot from '../../withRoot';
-import LayoutProperties from './components/LayoutProperties';
+import TemplateProperties from './components/TemplateProperties';
 import LayoutsList from './components/LayoutsList';
 
-const styles = theme => ({
-	root: {
-		width: '100%',
-	},
-	heading: {
-		fontSize: theme.typography.pxToRem(15),
-		flexBasis: '33.33%',
-		flexShrink: 0,
-	},
-	secondaryHeading: {
-		fontSize: theme.typography.pxToRem(15),
-		color: theme.palette.text.secondary,
-	},
-	paper: {
-		margin: '8px'
-	}
-});
+import styles from './../../styles/styles';
+
 
 class EditTemplate extends React.Component {
 
@@ -50,7 +35,7 @@ class EditTemplate extends React.Component {
 								<Typography className={classes.secondaryHeading}>I am an expansion panel</Typography>
 							</ExpansionPanelSummary>
 							<ExpansionPanelDetails>
-								<LayoutProperties />
+								<TemplateProperties />
 							</ExpansionPanelDetails>
 						</ExpansionPanel>
 						
@@ -58,7 +43,18 @@ class EditTemplate extends React.Component {
 				</Grid>
 				<Grid item md={3}>
 					<Paper className={classes.paper}>
+	
+						<ExpansionPanelSummary>
+							<Typography className={classes.heading}>Layouts List</Typography>
+						</ExpansionPanelSummary>
+
 						<LayoutsList />
+
+					</Paper>
+				</Grid>
+				<Grid item md={9}>
+					<Paper className={classes.paper}>
+						<Typography className={classes.heading}>Layouts List</Typography>
 					</Paper>
 				</Grid>
 			</Grid>

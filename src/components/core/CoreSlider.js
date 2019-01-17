@@ -3,21 +3,7 @@ import PropTypes from 'prop-types';
 import {Grid, Input, FormControl, Typography} from '@material-ui/core';
 import Slider from '@material-ui/lab/Slider';
 import { withStyles } from '@material-ui/core/styles';
-
-const styles = theme => ({
-	slider: {
-		paddingTop: '31px'
-	},
-	sliderContainer: {
-		bottom: 0,
-		position: 'absolute',
-		paddingRight:  theme.spacing.unit * 2
-	},
-	formControl: {
-		margin: theme.spacing.unit,
-		padding: theme.spacing.unit
-	},
-});
+import styles from '../../styles/styles';
 
 const CoreSlider = props => {
 	const {classes, value, handleSliderChange, withNumberInput = true,label} = props;
