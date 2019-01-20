@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import {Grid, Paper, ExpansionPanel, ExpansionPanelSummary, Typography, ExpansionPanelDetails} from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import withRoot from '../../withRoot';
 import TemplateProperties from './components/TemplateProperties';
 import LayoutsList from './components/LayoutsList';
 
@@ -31,8 +30,7 @@ class EditTemplate extends React.Component {
 					<Paper className={classes.paper}>
 						<ExpansionPanel >
 							<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-								<Typography className={classes.heading}>Template Properties</Typography>
-								<Typography className={classes.secondaryHeading}>I am an expansion panel</Typography>
+								<Typography>Template Properties</Typography>
 							</ExpansionPanelSummary>
 							<ExpansionPanelDetails>
 								<TemplateProperties />
@@ -45,7 +43,7 @@ class EditTemplate extends React.Component {
 					<Paper className={classes.paper}>
 	
 						<ExpansionPanelSummary>
-							<Typography className={classes.heading}>Layouts List</Typography>
+							<Typography>Layouts List</Typography>
 						</ExpansionPanelSummary>
 
 						<LayoutsList />
@@ -54,7 +52,7 @@ class EditTemplate extends React.Component {
 				</Grid>
 				<Grid item md={9}>
 					<Paper className={classes.paper}>
-						<Typography className={classes.heading}>Layouts List</Typography>
+						<Typography>Template Preview</Typography>
 					</Paper>
 				</Grid>
 			</Grid>
@@ -65,4 +63,4 @@ EditTemplate.propTypes = {
 	classes: PropTypes.object.isRequired,
 };
 
-export default withRoot(withStyles(styles)(EditTemplate));
+export default withStyles(styles)(EditTemplate);

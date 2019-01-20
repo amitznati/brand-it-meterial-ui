@@ -44,7 +44,7 @@ class LayoutsList extends React.Component {
 		return (
 			<ExpansionPanel key={i} expanded={expanded === i} onChange={this.handleChange(i).bind(this)}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-					<ImageLayoutHeader layout={l} classes={classes} />
+					<ImageLayoutHeader classes={classes} layout={l}/>
 				</ExpansionPanelSummary>
 				<ExpansionPanelDetails >
 					<Typography className={classes.heading}>Layout Properties</Typography>

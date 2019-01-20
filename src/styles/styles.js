@@ -21,7 +21,7 @@ const style = theme => ({
 		padding: theme.spacing.unit
 	},
 	
-	bigAvatarAmit: {
+	bigAvatar: {
 		margin: 10,
 		width: 60,
 		height: 60,
@@ -77,13 +77,9 @@ const style = theme => ({
 		left: 2,
 		fontSize: 16,
 	},
-	// paper: {
-	// 	position: 'absolute',
-	// 	zIndex: 1,
-	// 	marginTop: theme.spacing.unit,
-	// 	left: 0,
-	// 	right: 0,
-	// },
+	margin: {
+		margin: theme.spacing.unit,
+	},
 	divider: {
 		height: theme.spacing.unit * 2,
 	},
